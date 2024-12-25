@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅店和民宿預訂</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <header>
+        <h2>預訂系統</h2>
+        <form action="#">
+            <div class="search">
+                <input type="text" placeholder="搜尋">
+                <span class="icon"><ion-icon name="search-sharp"></ion-icon></span>
+            </div>
+        </form>
+    </header>
+    <nav class="navigation">
+        <a href="#">飯店資訊</a>
+        <a href="#">預定房間</a>
+        <a href="#">查看推薦</a>
+        <a href="#">查看預定</a>
+    </nav>
+    <aside>
+        <form id="filterform">
+            <div class="category-group">
+                <div class="category-title">依住宿類型</div>
+                <div class="category-item"><label><input type="checkbox">國際旅館</label></div>
+                <div class="category-item"><label><input type="checkbox">星級旅館</label></div>
+                <div class="category-item"><label><input type="checkbox">一般旅館</label></div>
+                <div class="category-item"><label><input type="checkbox">民宿</label></div>
+            </div>
+            <div class="category-group">
+                <div class="category-title">依設備類型</div>
+                <div class="category-item"><label><input type="checkbox">WiFi</label></div>
+                <div class="category-item"><label><input type="checkbox">停車場</label></div>
+                <div class="category-item"><label><input type="checkbox">供餐</label></div>
+            </div>
+            <div class="button-container">
+                <button type="reset" onclick="Reset(event)">取消</button>
+                <button type="submit" onclick="Submit(event)">送出</button>
+            </div>
+        </form>
+    </aside>
+    <main>
+        資料
+    </main>
+    <footer>
+        <div class="footer">
+            聯絡我們
+            <ul>
+                <li>郵箱: <a href="#">a</a></li>
+                <li>電話: <a href="#">b</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
