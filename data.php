@@ -36,25 +36,20 @@
         tr:hover {
             background-color: #ddd;
         }
-        a{
-            text-decoration: none;
-            color: black;
-        }
     </style>
 
 <body>
     <?php
-    $filename = $_GET['searching'] ?? '';
     //echo 'data:'.$filename.'<br>';
     include("connection.php");
     $select_db = @mysqli_select_db($link, "accommodation");
     if (!$select_db) {
         echo "<br>找不到資料庫!<br>";
     } else {
-        $sql_query = "SELECT * FROM accom_data WHERE name LIKE '%$filename%' OR district LIKE '%$filename%'";
+        $sql_query = "SELECT * FROM accom_data";
         $result = mysqli_query($link, $sql_query);
         if (mysqli_num_rows($result) > 0) {
-            echo "<h1>資料查詢</h1>";
+            echo "<h1>資訊</h1>";
             echo "<center><table border=0>";
             echo "<tr><th>編號</th><th>名稱</th><th>地區</th><th>評分</th></tr>";
             $count = 1;
@@ -63,9 +58,9 @@
                 echo "<tr onclick=\"window.location='details.php?id=$id'\">";
     ?>
                     <td align="left"><?php echo $count++ ?></td>
-                    <td align="left"><?php echo $row[2]?></td>
-                    <td align="left"><?php echo $row[3] ?></td>
-                    <td align="left"><?php echo $row[10] ?></td>
+                    <td align="left"><?php echo $row[2]//name ?></td>
+                    <td align="left"><?php echo $row[3]//district ?></td>
+                    <td align="left"><?php echo $row[10]//review ?></td>
                 </tr>
     <?php
             }

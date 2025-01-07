@@ -12,17 +12,20 @@
 <body>
     <header>
         <h2>預訂系統</h2>
-        <form action="search.php" method="get" target="searchFrame">
+        <form action="search.php" method="get" target="searchFrame" id="searchForm">
             <div class="search">
                 <input type="text" placeholder="搜尋" name="searching">
-                <span class="icon"><ion-icon name="search-sharp"></ion-icon></span>
+                <button type="submit" style="display:none;" onclick="submitSearchForm()"></button>
+                <span class="icon" onclick="document.getElementById('searchForm').submit();">
+                    <ion-icon name="search-sharp"></ion-icon>
+                </span>
             </div>
-        </form>
+        </form>        
     </header>
     <nav class="navigation">
-        <a href="#searchFrame">飯店資訊</a>
-        <a href="#">預定房間</a>
-        <a href="#">查看推薦</a>
+        <a href="javascript:void(0);" onclick="showIframe('dataFrame')">飯店資訊</a>
+        <a href="#;">預定房間</a>
+        <a href="javascript:void(0);" onclick="showIframe('recommendFrame')">查看推薦</a>
         <a href="#">查看預定</a>
     </nav>
     <aside>
@@ -67,7 +70,9 @@
         </form>-->
     </aside>
     <main>
-        <iframe id="searchFrame" name="searchFrame" src="search.php" width="100%" height="600px"></iframe>
+        <iframe id="dataFrame" name="dataFrame" src="data.php" width="100%" height="600px"></iframe>
+        <iframe id="searchFrame" name="searchFrame" src="search.php" width="100%" height="600px" style="display:none;"></iframe>
+        <iframe id="recommendFrame" name="recommendFrame" src="recommend.php" width="100%" height="600px" style="display:none;"></iframe>
     </main>
     <footer>
         <div class="footer">
