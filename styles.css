@@ -84,15 +84,16 @@ h2{
     outline-offset: 4px;
 }
 
-aside{
+aside {
+    display: inline-block;
     font-size: 1.2em;
     padding: 30px 2.5%;
     background-color: rgb(120, 120, 254);
     width: 20%;
     white-space: nowrap;
-    float: left;
     height: auto;
 }
+
 
 aside .category-group{
     margin-bottom: 30px;

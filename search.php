@@ -1,31 +1,77 @@
-<?php
-// 連接到資料庫
-$host = 'localhost';
-$db = 'your_database';
-$user = 'your_username';
-$pass = 'your_password';
-$conn = new mysqli($host, $user, $pass, $db);
+<!DOCTYPE html>
+<html lang="en">
 
-// 檢查連接
-if ($conn->connect_error) {
-    die("連接失敗: " . $conn->connect_error);
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
-// 獲取搜尋查詢
-$query = $_GET['query'];
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
 
-// 執行資料庫查詢
-$sql = "SELECT * FROM your_table WHERE your_column LIKE '%$query%'";
-$result = $conn->query($sql);
-
-// 顯示搜尋結果
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        echo "<p>" . $row['your_column'] . "</p>";
+<body>
+    <?php
+    $filename = $_GET['searching'] ?? '';
+    //echo 'data:'.$filename.'<br>';
+    include("connection.php");
+    $select_db = @mysqli_select_db($link, "accommodation");
+    if (!$select_db) {
+        echo "<br>找不到資料庫!<br>";
+    } else {
+        $sql_query = "SELECT * FROM accom_data WHERE name LIKE '%$filename%'";
+        $result = mysqli_query($link, $sql_query);
+        if (mysqli_num_rows($result) > 0) {
+            //echo "<h1>資料查詢</h1>";
+            echo "<center><table border=0>";
+            echo "<tr><th>編號</th><th>名稱</th><th>地區</th><th>評分</th></tr>";
+            while ($row = mysqli_fetch_array($result)) {
+    ?>
+                <tr>
+                    <td align="left"><?php echo $row[0] ?></td>
+                    <td align="left"><?php echo $row[2] ?></td>
+                    <td align="left"><?php echo $row[3] ?></td>
+                    <td align="left"><?php echo $row[10] ?></td>
+                </tr>
+    <?php
+            }
+            echo "</table></center>";
+        } else {
+            echo "<br>查無資料!";
+        }
     }
-} else {
-    echo "沒有結果";
-}
+    ?>
 
-$conn->close();
-?>
+
+
+</body>
+
+</html>

@@ -12,21 +12,41 @@
 <body>
     <header>
         <h2>預訂系統</h2>
-        <form action="#">
+        <form action="search.php" method="get" target="searchFrame">
             <div class="search">
-                <input type="text" placeholder="搜尋">
+                <input type="text" placeholder="搜尋" name="searching">
                 <span class="icon"><ion-icon name="search-sharp"></ion-icon></span>
             </div>
         </form>
     </header>
     <nav class="navigation">
-        <a href="#">飯店資訊</a>
+        <a href="#searchFrame">飯店資訊</a>
         <a href="#">預定房間</a>
         <a href="#">查看推薦</a>
         <a href="#">查看預定</a>
     </nav>
     <aside>
-        <form id="filterform">
+        <form id="filterform" method="GET" action="filter.php">
+            <div class="category-group">
+                <div class="category-title">依住宿類型</div>
+                <div class="category-item"><label><input type="checkbox" name="type[]" value="國際旅館">國際旅館</label></div>
+                <div class="category-item"><label><input type="checkbox" name="type[]" value="星級旅館">星級旅館</label></div>
+                <div class="category-item"><label><input type="checkbox" name="type[]" value="一般旅館">一般旅館</label></div>
+                <div class="category-item"><label><input type="checkbox" name="type[]" value="民宿">民宿</label></div>
+            </div>
+            <div class="category-group">
+                <div class="category-title">依設備類型</div>
+                <div class="category-item"><label><input type="checkbox" name="facility[]" value="WiFi">WiFi</label></div>
+                <div class="category-item"><label><input type="checkbox" name="facility[]" value="停車場">停車場</label></div>
+                <div class="category-item"><label><input type="checkbox" name="facility[]" value="供餐">供餐</label></div>
+            </div>
+            <div class="button-container">
+                <button type="reset">取消</button>
+                <button type="submit">送出</button>
+            </div>
+        </form>
+        
+        <!--<form id="filterform">
             <div class="category-group">
                 <div class="category-title">依住宿類型</div>
                 <div class="category-item"><label><input type="checkbox">國際旅館</label></div>
@@ -44,10 +64,10 @@
                 <button type="reset" onclick="Reset(event)">取消</button>
                 <button type="submit" onclick="Submit(event)">送出</button>
             </div>
-        </form>
+        </form>-->
     </aside>
     <main>
-        資料
+        <iframe id="searchFrame" name="searchFrame" src="search.php" width="100%" height="600px"></iframe>
     </main>
     <footer>
         <div class="footer">
