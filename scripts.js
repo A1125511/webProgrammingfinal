@@ -4,14 +4,17 @@ function showIframe(frameName){
     document.getElementById('recommendFrame').style.display = 'none';
     document.getElementById('01Frame').style.display = 'none';
     document.getElementById('02Frame').style.display = 'none';
+    //全部頁面不顯示
 
     document.getElementById(frameName).style.display = 'block';
+    //只顯示傳過來的id的頁面
 }
 
 function submitSearchForm(){
     var form = document.getElementById('searchForm');
     form.submit();
     showIframe('searchFrame');
+    //搜索的
 }
 
 function Reset(event){

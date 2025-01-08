@@ -16,7 +16,9 @@
             <div class="search">
                 <input type="text" placeholder="搜尋" name="searching">
                 <button type="submit" style="display:none;" onclick="submitSearchForm()"></button>
+                <!--注解統一指向上面-->
                 <span class="icon" onclick="document.getElementById('searchForm').submit();">
+                    <!--這個onclick原本想點機會搜索,但是沒弄好,可以不用管-->
                     <ion-icon name="search-sharp"></ion-icon>
                 </span>
             </div>
@@ -27,9 +29,11 @@
         <a href="#;">預定房間</a>
         <a href="javascript:void(0);" onclick="showIframe('recommendFrame')">查看推薦</a>
         <a href="javascript:void(0);" onclick="showIframe('01Frame')">查看預定</a>
+        <!--傳id給js-->
     </nav>
     <aside>
         <form id="filterform" method="GET" action="filter.php">
+            <!--還沒弄完-->
             <div class="category-group">
                 <div class="category-title">依住宿類型</div>
                 <div class="category-item"><label><input type="checkbox" name="type[]" value="國際旅館">國際旅館</label></div>
@@ -68,6 +72,8 @@
                 <button type="submit" onclick="Submit(event)">送出</button>
             </div>
         </form>-->
+        <!--保留原本的,防止要慢慢修改,可以直接用原本的改-->
+
     </aside>
     <main>
         <iframe id="dataFrame" name="dataFrame" src="data.php" width="100%" height="600px"></iframe>
@@ -75,6 +81,7 @@
         <iframe id="recommendFrame" name="recommendFrame" src="recommend.php" width="100%" height="600px" style="display:none;"></iframe>
         <iframe id="01Frame" name="01Frame" src="01.php" width="100%" height="600px" style="display:none;"></iframe>
         <iframe id="02Frame" name="02Frame" src="02.php" width="100%" height="600px" style="display:none;"></iframe>
+        <!--全部不顯示,dataFrame顯示可以當作主頁面,全部的資料會顯示-->
     </main>
     <footer>
         <div class="footer">

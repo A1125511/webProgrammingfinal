@@ -60,9 +60,11 @@
             $count = 1;
             while ($row = mysqli_fetch_array($result)) {
                 $id = $row[0];
+                //跟int一樣,xampp比較嚴謹
                 echo "<tr onclick=\"window.location='details.php?id=$id'\">";
     ?>
                     <td align="left"><?php echo $count++ ?></td>
+            <!--原本是找id的,但是數字回跳,所以另外寫一個count計算-->
                     <td align="left"><?php echo $row[2]?></td>
                     <td align="left"><?php echo $row[3] ?></td>
                     <td align="left"><?php echo $row[10] ?></td>

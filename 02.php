@@ -50,13 +50,15 @@
         echo "<br>找不到資料庫!<br>";
     } else {
         $sql_query = "SELECT * FROM guest WHERE name = '$id'";
+        //用名字儅id
         $result = mysqli_query($link, $sql_query);
         if (mysqli_num_rows($result) > 0) {
             echo "<h1>查詢</h1>";
             echo "<center><table border=0>";
             echo "<tr><th>飯店名字</th><th>姓名</th><th>聯絡號碼</th><th>預定房間</th><th>價格</th><th>付款狀態</th></tr>";
-            while ($row = mysqli_fetch_array($result)){//1 2 4 7 8
+            while ($row = mysqli_fetch_array($result)){
                 $sql_qry = "SELECT * FROM accom_data WHERE accom_id = '$row[3]'";
+                //用guest裏的accom_id找accom_data裏的accom_id
                 $result01 = mysqli_query($link, $sql_qry);
                 $row01 = mysqli_fetch_array($result01);
     ?>

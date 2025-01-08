@@ -48,6 +48,7 @@
         echo "<br>找不到資料庫!<br>";
     } else {
         $sql_query = "SELECT * FROM accom_data WHERE accom_id = '$id'";
+        //抓id,找資料
         $result = mysqli_query($link, $sql_query);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_array($result)){

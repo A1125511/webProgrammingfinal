@@ -2,6 +2,14 @@
 
 <body>
 
+
+
+
+<!--還沒弄,只是複製過來-->
+
+
+
+
     <?php
     include("connection.php");
     $select_db = @mysqli_select_db($link, "accommodation");

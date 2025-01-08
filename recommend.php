@@ -47,6 +47,7 @@
         echo "<br>找不到資料庫!<br>";
     } else {
         $sql_query = "SELECT * FROM accom_data ORDER BY review DESC LIMIT 10";
+        //就是先排列從大到小,然後輸出最開始的10個
         $result = mysqli_query($link, $sql_query);
         if (mysqli_num_rows($result) > 0) {
             echo "<h1>推薦</h1>";
@@ -56,6 +57,7 @@
             while ($row = mysqli_fetch_array($result)) {
                 $id = $row[0];
                 echo "<tr onclick=\"window.location='details.php?id=$id'\">";
+                //就是點擊會跑去details.php,會抓id
     ?>
                     <td align="left"><?php echo $count++ ?></td>
                     <td align="left"><?php echo $row[2] ?></td>
