@@ -13,45 +13,45 @@
         <TT>
             <center>
                 <table border="0" width="30%">
-                <tr bgcolor=pink>
+                    <tr bgcolor=pink>
                         <td align="right">住宿編號: </td>
                         <td align="left"><input type=text maxLength="10" size="10" name="id"></td>
                     </tr>
                     <tr bgcolor=pink>
                         <td align="right">住宿類型: </td>
-                        <td align="left"><input type=text maxLength="10" size="10" name="type"></td>
+                        <td align="left"><input type=text maxLength="64" size="10" name="type"></td>
                     </tr>
                     <tr>
                         <td align="right">住宿店名: </td>
-                        <td align="left"><input type=text maxLength="10" size="10" name="name"></td>
+                        <td align="left"><input type=text maxLength="64" size="10" name="name"></td>
                     </tr>
 
                     <tr bgcolor=#77DDFF>
                         <td align="right">地區: </td>
-                        <td align="left"><input type=text size="20" name="district"></td>
-</tr>
+                        <td align="left"><input type=text size="64" name="district"></td>
+                    </tr>
                     <tr>
                         <td align="right">地址: </td>
-                        <td align="left"><input type=text size="20" name="address"></td>
-</tr>
+                        <td align="left"><input type=text size="64" name="address"></td>
+                    </tr>
                     <tr bgcolor=#77DDFF>
-                    <td align="right" width=20%>電話:</td>
+                        <td align="right" width=20%>電話:</td>
                         <td align="left">
-                            <input maxLength="15" size="15" name="phone" type="text">
-</tr>
+                            <input maxLength="64" size="10" name="phone" type="text">
+                    </tr>
                     <tr>
                         <td align="right">信箱: </td>
-                        <td align="left"><input type=text size="20" name="mail"></td>
-</tr>
+                        <td align="left"><input type=text size="64" name="mail"></td>
+                    </tr>
                     <tr bgcolor=#77DDFF>
                         <td align="right">官網: </td>
-                        <td align="left"><input type=text size="20" name="URL"></td>
-</tr>
+                        <td align="left"><input type=text size="64" name="URL"></td>
+                    </tr>
                     <tr>
                         <td align="right">房間數量: </td>
-                        <td align="left"><input type=text size="20" name="room_num"></td>
-</tr>
-<tr bgcolor=#77DDFF>
+                        <td align="left"><input type=text size="64" name="room_num"></td>
+                    </tr>
+                    <tr bgcolor=#77DDFF>
                         <td align="right">配備:</td>
                         <td align="left">
                             <select name="equip_type">
@@ -64,12 +64,12 @@
                                 <option value='G'>G</option>
                                 <option value='H'>H</option>
                             </select>
-                            </tr>
+                    </tr>
                     <tr bgcolor=#77DDFF>
                         <td align="right">評價: </td>
-                        <td align="left"><input type=text size="20" name="review"></td>
-</tr>
-                        
+                        <td align="left"><input type=text size="64" name="review"></td>
+                    </tr>
+
                 </table>
                 <p align="center">
                     <input value="線上註冊" type="submit">
